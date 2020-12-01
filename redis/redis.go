@@ -2,8 +2,8 @@ package redis
 
 import (
 	"errors"
-	sessredistore "github.com/boj/redistore"
 	"github.com/go-redis/redis/v8"
+	"github.com/kenretto/sessredistore"
 
 	"github.com/gin-contrib/sessions"
 )
