@@ -5,7 +5,7 @@ import (
 	"github.com/go-redis/redis/v8"
 	"github.com/kenretto/sessredistore"
 
-	"github.com/gin-contrib/sessions"
+	"github.com/kenretto/sessions"
 )
 
 type Store interface {
