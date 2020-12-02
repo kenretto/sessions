@@ -9,4 +9,5 @@ require (
 	github.com/gorilla/context v1.1.1
 	github.com/gorilla/sessions v1.2.0
 	github.com/kenretto/sessredistore v0.0.0-20201201100228-96fefaa7a1a5
+	github.com/quasoft/memstore v0.0.0-20180925164028-84a050167438
 )
