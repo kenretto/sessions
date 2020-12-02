@@ -1,14 +1,18 @@
 package main
 
 import (
-	"github.com/gin-contrib/sessions"
-	"github.com/gin-contrib/sessions/redis"
 	"github.com/gin-gonic/gin"
+	redisDriver "github.com/go-redis/redis/v8"
+	"github.com/kenretto/sessions"
+	"github.com/kenretto/sessions/redis"
 )
 
 func main() {
 	r := gin.Default()
-	store, _ := redis.NewStore(10, "tcp", "localhost:6379", "", []byte("secret"))
+	storeDB := redisDriver.NewClient(&redisDriver.Options{
+		Addr: "localhost:6379",
+	})
+	store := redis.NewStore(storeDB, []byte("secret"))
 	r.Use(sessions.Sessions("mysession", store))
 
 	r.GET("/incr", func(c *gin.Context) {
